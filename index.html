@@ -9,6 +9,8 @@
 <meta property="og:title" content="Anusha Devulapally">
 <meta property="og:description" content="PhD candidate at Penn State building AI systems that spend compute and memory only where it matters. Open to full-time roles starting 2027.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://anusha-devulapally.github.io/">
+<meta property="og:image" content="https://anusha-devulapally.github.io/photo.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23152A43'/%3E%3Ccircle cx='11' cy='12' r='3' fill='%230D7D82'/%3E%3Ccircle cx='21' cy='12' r='3' fill='%23C9832A'/%3E%3Ccircle cx='16' cy='21' r='3' fill='%230D7D82'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -80,13 +82,13 @@
   }
   .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 3.5rem; }
   .brand { color: var(--ink); text-decoration: none; font-weight: 650; font-stretch: 118%; letter-spacing: -0.01em; white-space: nowrap; }
-  .site-nav { display: flex; gap: clamp(0.75rem, 2.4vw, 1.75rem); align-items: center; }
-  .site-nav a { color: var(--ink-2); text-decoration: none; font-size: 0.9375rem; }
+  .site-nav { display: flex; gap: clamp(0.75rem, 2.2vw, 1.6rem); align-items: center; overflow-x: auto; scrollbar-width: none; padding: 0.35rem 0.1rem; }
+  .site-nav::-webkit-scrollbar { display: none; }
+  .site-nav a { color: var(--ink-2); text-decoration: none; font-size: 0.9375rem; white-space: nowrap; }
   .site-nav a:hover { color: var(--ink); }
   .site-nav .nav-cv { color: var(--ink); font-weight: 600; border: 1.5px solid var(--ink); border-radius: 6px; padding: 0.2rem 0.65rem; }
-  @media (max-width: 600px) {
+  @media (max-width: 640px) {
     .brand { display: none; }
-    .site-header .wrap { justify-content: center; }
     .site-nav a:not(.nav-cv) { font-size: 0.875rem; }
   }
 
@@ -100,9 +102,10 @@
     line-height: 0.98;
     letter-spacing: -0.025em;
   }
-  .who { display: flex; align-items: center; gap: 0.9rem; margin: 1.1rem 0 0; color: var(--ink-2); max-width: 62ch; }
+  .who { display: flex; align-items: center; gap: 1rem; margin: 1.1rem 0 0; color: var(--ink-2); max-width: 64ch; }
   .who p { margin: 0; }
-  .photo { width: 3.5rem; height: 3.5rem; border-radius: 50%; object-fit: cover; flex: none; }
+  .photo { width: 5.5rem; height: 5.5rem; border-radius: 50%; object-fit: cover; flex: none; background: var(--surface); }
+  .availability { color: var(--teal); font-weight: 600; }
   .hero-grid {
     display: grid;
     grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr);
@@ -120,7 +123,7 @@
   }
   .lede { max-width: 60ch; }
   .proof { color: var(--ink-2); max-width: 60ch; }
-  .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.5rem 0 0.9rem; }
+  .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.5rem 0 1rem; }
   .btn {
     display: inline-flex; align-items: center;
     padding: 0.65rem 1.15rem;
@@ -131,7 +134,7 @@
   .btn:hover { background: var(--surface); }
   .btn-primary { background: var(--ink); color: var(--on-ink); }
   .btn-primary:hover { background: var(--blue); border-color: var(--blue); color: var(--on-ink); }
-  .availability { color: var(--teal); font-weight: 600; }
+  .links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; list-style: none; padding: 0; margin: 0; }
 
   /* Event camera figure */
   .sensor { margin: 0; }
@@ -166,7 +169,8 @@
     font-stretch: 118%; font-weight: 650; letter-spacing: -0.01em;
     align-self: start; position: sticky; top: 5rem;
   }
-  .block-body { max-width: 46rem; }
+  .block-body { max-width: 50rem; min-width: 0; }
+  .block-body p { max-width: 64ch; }
   @media (max-width: 860px) {
     .hero-grid { grid-template-columns: 1fr; }
     .sensor { max-width: 36rem; }
@@ -174,35 +178,67 @@
     .block > h2 { position: static; }
   }
 
+  /* News */
+  .news { list-style: none; margin: 0; padding: 0; }
+  .news li { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: 1rem; padding: 0.55rem 0; }
+  .news li + li { border-top: 1px solid var(--rule); }
+  .news p { margin: 0; }
+
   /* Research */
-  .area + .area { margin-top: 3rem; }
-  .area h3 { margin: 0 0 0.35rem; font-size: 1.25rem; line-height: 1.3; font-weight: 650; font-stretch: 108%; }
-  .area-why { color: var(--ink-2); margin-bottom: 1.5rem; max-width: 62ch; }
-  .project { border-left: 2px solid var(--rule); padding-left: 1.1rem; margin-bottom: 1.75rem; }
+  .area + .area { margin-top: 3.5rem; }
+  .area h3 { margin: 0 0 0.35rem; font-size: 1.3rem; line-height: 1.3; font-weight: 650; font-stretch: 110%; }
+  .area-why { color: var(--ink-2); margin-bottom: 1.75rem; }
+  .project { margin-bottom: 2.75rem; }
   .project:last-child { margin-bottom: 0; }
-  .project h4 { margin: 0 0 0.3rem; font-size: 1.0625rem; font-weight: 650; }
-  .project p { max-width: 62ch; }
-  .result { color: var(--teal); font-weight: 600; margin-bottom: 0.35rem; }
+  .project h4 { margin: 0 0 0.3rem; font-size: 1.125rem; line-height: 1.35; font-weight: 650; }
+  .result { color: var(--teal); font-weight: 600; margin-bottom: 0.4rem; }
   .meta { color: var(--ink-2); font-size: 0.9375rem; margin: 0; }
+  .plinks { display: flex; flex-wrap: wrap; gap: 0.3rem 1.1rem; margin: 0.35rem 0 0; font-size: 0.9375rem; font-weight: 600; }
+  .also { color: var(--ink-2); font-size: 0.9375rem; margin-top: -0.75rem; }
+
+  .fig { margin: 0 0 1.1rem; border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; }
+  .fig .pane { background: #fff; padding: clamp(0.5rem, 2vw, 1rem); }
+  .fig img { display: block; width: 100%; height: auto; margin: 0 auto; }
+  .fig.narrow img { max-width: 28rem; }
+  .fig.illus .pane { background: var(--surface); }
+  .fig svg { display: block; width: 100%; height: auto; }
+  .fig figcaption { font-size: 0.8125rem; color: var(--ink-2); padding: 0.45rem 0.8rem; border-top: 1px solid var(--rule); }
+  .s-box { fill: var(--bg); stroke: var(--rule); stroke-width: 1.5; }
+  .s-label { fill: var(--ink); font: 600 14px "Archivo", system-ui, sans-serif; }
+  .s-sub { fill: var(--ink-2); font: 500 12px "Archivo", system-ui, sans-serif; }
+  .s-line { fill: none; stroke: var(--rule); stroke-width: 2; stroke-dasharray: 5 5; }
+  .s-live { fill: none; stroke: var(--teal); stroke-width: 2.5; }
+  .s-live-box { fill: var(--bg); stroke: var(--teal); stroke-width: 2.5; }
+  .s-on { fill: var(--teal); }
+  .s-off { fill: var(--amber); }
 
   /* Timeline and publications */
-  .timeline, .pubs { list-style: none; margin: 0; padding: 0; }
-  .timeline li, .pubs li { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: 1rem; }
-  .timeline li + li { margin-top: 1.75rem; }
-  .pubs li + li { margin-top: 1.4rem; }
   .when { color: var(--ink-2); font-variant-numeric: tabular-nums; }
+  .timeline { list-style: none; margin: 0; padding: 0; }
+  .timeline li { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: 1rem; }
+  .timeline li + li { margin-top: 1.75rem; }
   .timeline h3 { margin: 0; font-size: 1.0625rem; font-weight: 650; }
   .role-title { margin: 0 0 0.35rem; color: var(--ink-2); }
-  .timeline p:last-child, .pubs p:last-child { margin-bottom: 0; }
-  .pub-title { font-weight: 600; margin: 0 0 0.2rem; line-height: 1.4; }
+  .timeline p:last-child { margin-bottom: 0; }
+  .sub-h { margin: 3rem 0 1.25rem; font-size: 1.3rem; font-weight: 650; font-stretch: 110%; }
+
+  .pub-year { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: 1rem; }
+  .pub-year + .pub-year { margin-top: 1.75rem; padding-top: 1.75rem; border-top: 1px solid var(--rule); }
+  .pub-year h3 { margin: 0; font-size: 1rem; font-weight: 500; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+  .pubs { list-style: none; margin: 0; padding: 0; }
+  .pubs li + li { margin-top: 1.15rem; }
+  .pubs p { margin: 0; }
+  .pub-title { font-weight: 600; line-height: 1.4; margin-bottom: 0.15rem !important; }
   .pub-title a { color: var(--ink); text-decoration-color: var(--rule); }
   .pub-title a:hover { color: var(--blue); text-decoration-color: currentColor; }
-  .pub-authors { color: var(--ink-2); margin: 0 0 0.1rem; font-size: 0.9375rem; }
+  .pub-authors { color: var(--ink-2); font-size: 0.9375rem; }
   .pub-authors strong { color: var(--ink); font-weight: 600; }
-  .pub-venue { margin: 0; font-size: 0.9375rem; font-style: italic; }
+  .eq { white-space: nowrap; }
+  .pub-venue { font-size: 0.9375rem; font-style: italic; }
+  .pub-venue a { font-style: normal; font-weight: 600; margin-left: 0.6rem; }
   .more { margin-top: 2rem; color: var(--ink-2); }
   @media (max-width: 520px) {
-    .timeline li, .pubs li { grid-template-columns: 1fr; gap: 0.15rem; }
+    .timeline li, .news li, .pub-year { grid-template-columns: 1fr; gap: 0.15rem; }
   }
 
   /* Skills */
@@ -211,18 +247,22 @@
   .skills dd { margin: 0; color: var(--ink-2); }
   @media (max-width: 760px) { .skills { grid-template-columns: 1fr; gap: 1.25rem; } }
 
+  /* Talks and service */
+  .facts { margin: 0; }
+  .facts div { display: grid; grid-template-columns: 8rem minmax(0, 1fr); gap: 1rem; padding: 0.7rem 0; }
+  .facts div + div { border-top: 1px solid var(--rule); }
+  .facts dt { font-weight: 650; }
+  .facts dd { margin: 0; max-width: 64ch; }
+  @media (max-width: 520px) { .facts div { grid-template-columns: 1fr; gap: 0.2rem; } }
+
   /* Contact */
   .contact-email {
     display: inline-block; margin: 0.25rem 0 1.25rem;
     font-size: clamp(1.35rem, 3.2vw, 2rem); font-stretch: 112%; font-weight: 620; letter-spacing: -0.01em;
     overflow-wrap: anywhere;
   }
-  .links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; list-style: none; padding: 0; margin: 0; }
 
   footer { border-top: 1px solid var(--rule); padding: 1.75rem 0 2.5rem; color: var(--ink-2); font-size: 0.875rem; }
-
-  /* Placeholder to fill in before publishing */
-  mark.todo { background: #FFE58A; color: #3A2E00; padding: 0 0.25em; border-radius: 3px; }
 </style>
 </head>
 <body>
@@ -231,6 +271,7 @@
   <div class="wrap">
     <a class="brand" href="#top">Anusha Devulapally</a>
     <nav class="site-nav" aria-label="Sections">
+      <a href="#news">News</a>
       <a href="#research">Research</a>
       <a href="#experience">Experience</a>
       <a href="#publications">Publications</a>
@@ -245,7 +286,6 @@
   <section class="hero" aria-labelledby="name">
     <h1 id="name">Anusha Devulapally</h1>
     <div class="who">
-      <!-- Add a square photo named photo.jpg next to this file and it appears here. Without one, nothing shows. -->
       <img class="photo" src="photo.jpg" alt="Anusha Devulapally" onerror="this.remove()">
       <p>PhD candidate in Computer Science and Engineering at Penn State, advised by Prof. Vijaykrishnan Narayanan. Graduating January 2027. <span class="availability">Open to full-time roles starting 2027.</span></p>
     </div>
@@ -254,11 +294,16 @@
       <div>
         <p class="statement">I build AI systems that spend compute and memory only where it matters.</p>
         <p class="lede">AI now runs on robots, vehicles and edge devices that read several sensors at once, while models and datasets outgrow the memory of a single GPU. Moving data has become more expensive than computing on it. Yet most systems still process every sensor on every frame, and add memory tiers without knowing when they will pay off. My research makes AI execution workload-aware, from which sensor a model reads on each frame down to which memory tier its data lives in.</p>
-        <p class="proof">15 publications, 7 as first author, at MICRO, ISPASS, MEMSYS, CVPR Workshops, ACM Multimedia, NeurIPS Workshops and VLSI Design. Internships at SK hynix America and Pacific Northwest National Laboratory.</p>
+        <p class="proof">Publications at MICRO, ISPASS, MEMSYS, CVPR Workshops, ACM Multimedia, VLSI Design and NeurIPS Workshops, seven as first author. Internships at SK hynix America and Pacific Northwest National Laboratory.</p>
         <div class="actions">
           <a class="btn btn-primary" href="cv.pdf">Download CV</a>
           <a class="btn" href="mailto:akd5994@psu.edu">Email me</a>
         </div>
+        <ul class="links">
+          <li><a href="https://scholar.google.com/citations?user=SGNp7WsAAAAJ&amp;hl=en">Google Scholar</a></li>
+          <li><a href="https://www.linkedin.com/in/anusha-devulapally">LinkedIn</a></li>
+          <li><a href="https://github.com/anusha-devulapally">GitHub</a></li>
+        </ul>
       </div>
 
       <figure class="sensor">
@@ -277,6 +322,21 @@
     </div>
   </section>
 
+  <section id="news" class="block" aria-labelledby="news-h">
+    <h2 id="news-h">News</h2>
+    <div class="block-body">
+      <ol class="news">
+        <li><span class="when">Oct 2026</span><p>Presenting my research on efficient AI systems at SRC CareerConnections 2026.</p></li>
+        <li><span class="when">Oct 2026</span><p>PhysThermix, physics-informed temperature prediction for chiplets, accepted at the NeurIPS 2026 Workshop on AI for Chip Design.</p></li>
+        <li><span class="when">Aug 2026</span><p>Started as an AI/HPC System Research Intern at SK hynix America, building a GPU, CXL and NVMe memory hierarchy for large-scale GNN training.</p></li>
+        <li><span class="when">2026</span><p>Our review of event-based vision sensor fusion is published in <em>Neuromorphic Computing and Engineering</em>.</p></li>
+        <li><span class="when">Jan 2026</span><p>ThermLeT, transformer-based temperature prediction for 2.5D chiplets, published at VLSI Design 2026 (co-first author).</p></li>
+        <li><span class="when">Dec 2025</span><p>Three abstracts at AGU25 on AI for faster environmental permitting, including my work on digitizing NEPA map features.</p></li>
+        <li><span class="when">Oct 2025</span><p>Paper on multi-dimensional ML-pipeline optimization in disaggregated datacenters at MICRO 2025.</p></li>
+      </ol>
+    </div>
+  </section>
+
   <section id="research" class="block" aria-labelledby="research-h">
     <h2 id="research-h">Research</h2>
     <div class="block-body">
@@ -286,6 +346,104 @@
         <p class="area-why">Robots and vehicles carry several sensors, but fusing all of them on every frame costs latency and energy even when one adds little.</p>
 
         <div class="project">
+          <figure class="fig illus">
+            <div class="pane">
+              <svg viewBox="0 0 700 250" role="img" aria-labelledby="gate-t">
+                <title id="gate-t">A gate looks at each input and routes it to RGB only, events only, or both, before predicting depth.</title>
+                <defs>
+                  <linearGradient id="rgbFill" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C9D3DC"/><stop offset="0.55" stop-color="#8A99A8"/><stop offset="1" stop-color="#4E5D6C"/></linearGradient>
+                  <linearGradient id="depthFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2A1B5C"/><stop offset="0.5" stop-color="#9C3C78"/><stop offset="1" stop-color="#F0B44E"/></linearGradient>
+                </defs>
+                <rect x="20" y="20" width="120" height="80" rx="6" fill="url(#rgbFill)"/>
+                <text class="s-label" x="80" y="120" text-anchor="middle">RGB frame</text>
+                <rect class="s-box" x="20" y="135" width="120" height="80" rx="6"/>
+                <rect class="s-on" x="33.3" y="201.6" width="4" height="4" rx="0.5"/>
+                <rect class="s-off" x="25.6" y="208.3" width="4" height="4" rx="0.5"/>
+                <rect class="s-on" x="37.7" y="200.9" width="4" height="4" rx="0.5"/>
+                <rect class="s-off" x="26.8" y="208.4" width="4" height="4" rx="0.5"/>
+                <rect class="s-on" x="39.2" y="199.5" width="4" height="4" rx="0.5"/>
+                <rect class="s-off" x="30.3" y="205.1" width="4" height="4" rx="0.5"/>
+                <rect class="s-on" x="44.3" y="199.3" width="4" height="4" rx="0.5"/>
+                <rect class="s-off" x="34.1" y="203.9" width="4" height="4" rx="0.5"/>
+                <rect class="s-on" x="48.6" y="198.0" width="4" height="4" rx="0.5"/>
+                <rect class="s-off" x="39.4" y="202.8" width="4" height="4" rx="0.5"/>
+                <rect class="s-on" x="53.5" y="192.4" width="4" height="4" rx="0.5"/>
+                <rect class="s-off" x="44.0" y="200.4" width="4" height="4" rx="0.5"/>
+                <rect class="s-on" x="53.7" y="190.5" width="4" height="4" rx="0.5"/>
+                <rect class="s-off" x="45.4" y="200.3" width="4" height="4" rx="0.5"/>
+                <rect class="s-on" x="57.4" y="190.1" width="4" height="4" rx="0.5"/>
+                <rect class="s-off" x="50.2" y="196.2" width="4" height="4" rx="0.5"/>
+                <rect class="s-on" x="62.4" y="185.5" width="4" height="4" rx="0.5"/>
+                <rect class="s-off" x="51.4" y="193.1" width="4" height="4" rx="0.5"/>
+                <rect class="s-on" x="66.4" y="184.3" width="4" height="4" rx="0.5"/>
+                <rect class="s-off" x="55.9" y="192.0" width="4" height="4" rx="0.5"/>
+                <rect class="s-on" x="69.0" y="181.0" width="4" height="4" rx="0.5"/>
+                <rect class="s-off" x="61.4" y="189.6" width="4" height="4" rx="0.5"/>
+                <rect class="s-on" x="71.7" y="179.2" width="4" height="4" rx="0.5"/>
+                <rect class="s-off" x="63.8" y="187.4" width="4" height="4" rx="0.5"/>
+                <rect class="s-on" x="77.2" y="175.1" width="4" height="4" rx="0.5"/>
+                <rect class="s-off" x="69.2" y="181.4" width="4" height="4" rx="0.5"/>
+                <rect class="s-on" x="79.4" y="173.9" width="4" height="4" rx="0.5"/>
+                <rect class="s-off" x="69.4" y="179.9" width="4" height="4" rx="0.5"/>
+                <rect class="s-on" x="81.4" y="170.5" width="4" height="4" rx="0.5"/>
+                <rect class="s-off" x="75.3" y="177.2" width="4" height="4" rx="0.5"/>
+                <rect class="s-on" x="88.3" y="166.1" width="4" height="4" rx="0.5"/>
+                <rect class="s-off" x="78.6" y="174.2" width="4" height="4" rx="0.5"/>
+                <rect class="s-on" x="90.6" y="163.8" width="4" height="4" rx="0.5"/>
+                <rect class="s-off" x="82.7" y="172.7" width="4" height="4" rx="0.5"/>
+                <rect class="s-on" x="93.7" y="161.8" width="4" height="4" rx="0.5"/>
+                <rect class="s-off" x="83.1" y="168.9" width="4" height="4" rx="0.5"/>
+                <rect class="s-on" x="97.9" y="160.4" width="4" height="4" rx="0.5"/>
+                <rect class="s-off" x="89.6" y="164.6" width="4" height="4" rx="0.5"/>
+                <rect class="s-on" x="100.4" y="156.6" width="4" height="4" rx="0.5"/>
+                <rect class="s-off" x="90.0" y="162.8" width="4" height="4" rx="0.5"/>
+                <rect class="s-on" x="103.1" y="152.1" width="4" height="4" rx="0.5"/>
+                <rect class="s-off" x="93.6" y="161.7" width="4" height="4" rx="0.5"/>
+                <rect class="s-on" x="106.4" y="150.4" width="4" height="4" rx="0.5"/>
+                <rect class="s-off" x="98.5" y="159.9" width="4" height="4" rx="0.5"/>
+                <rect class="s-on" x="109.8" y="149.2" width="4" height="4" rx="0.5"/>
+                <rect class="s-off" x="102.6" y="158.0" width="4" height="4" rx="0.5"/>
+                <rect class="s-on" x="116.2" y="149.0" width="4" height="4" rx="0.5"/>
+                <rect class="s-off" x="105.1" y="154.2" width="4" height="4" rx="0.5"/>
+                <rect class="s-on" x="117.9" y="147.4" width="4" height="4" rx="0.5"/>
+                <rect class="s-off" x="111.3" y="151.4" width="4" height="4" rx="0.5"/>
+                <rect class="s-on" x="120.7" y="143.1" width="4" height="4" rx="0.5"/>
+                <rect class="s-off" x="111.9" y="151.1" width="4" height="4" rx="0.5"/>
+                <rect class="s-on" x="88.4" y="158.6" width="4" height="4" rx="0.5"/>
+                <rect class="s-off" x="41.4" y="176.8" width="4" height="4" rx="0.5"/>
+                <rect class="s-on" x="127.0" y="187.3" width="4" height="4" rx="0.5"/>
+                <rect class="s-off" x="74.4" y="199.4" width="4" height="4" rx="0.5"/>
+                <rect class="s-off" x="68.2" y="167.4" width="4" height="4" rx="0.5"/>
+                <rect class="s-on" x="93.2" y="145.2" width="4" height="4" rx="0.5"/>
+                <rect class="s-on" x="130.4" y="170.5" width="4" height="4" rx="0.5"/>
+                <rect class="s-on" x="62.0" y="144.5" width="4" height="4" rx="0.5"/>
+                <rect class="s-off" x="86.1" y="177.0" width="4" height="4" rx="0.5"/>
+                <rect class="s-on" x="91.1" y="145.7" width="4" height="4" rx="0.5"/>
+                <text class="s-label" x="80" y="235" text-anchor="middle">Events</text>
+                <path class="s-live" d="M140 60 C 168 60, 165 112, 190 112"/>
+                <path class="s-line" d="M140 175 C 168 175, 165 128, 190 128"/>
+                <rect class="s-live-box" x="190" y="92" width="112" height="56" rx="8"/>
+                <text class="s-label" x="246" y="117" text-anchor="middle">Gate</text>
+                <text class="s-sub" x="246" y="134" text-anchor="middle">picks per input</text>
+                <path class="s-live" d="M302 120 C 328 120, 326 49, 352 49"/>
+                <path class="s-line" d="M302 120 L 352 120"/>
+                <path class="s-line" d="M302 120 C 328 120, 326 191, 352 191"/>
+                <rect class="s-live-box" x="352" y="30" width="136" height="38" rx="6"/>
+                <text class="s-label" x="420" y="54" text-anchor="middle">RGB only</text>
+                <rect class="s-box" x="352" y="101" width="136" height="38" rx="6"/>
+                <text class="s-label" x="420" y="125" text-anchor="middle">Events only</text>
+                <rect class="s-box" x="352" y="172" width="136" height="38" rx="6"/>
+                <text class="s-label" x="420" y="196" text-anchor="middle">RGB and events</text>
+                <path class="s-live" d="M488 49 C 516 49, 514 120, 542 120"/>
+                <path class="s-line" d="M488 120 L 542 120"/>
+                <path class="s-line" d="M488 191 C 516 191, 514 120, 542 120"/>
+                <rect x="542" y="72" width="138" height="96" rx="6" fill="url(#depthFill)"/>
+                <text class="s-label" x="611" y="190" text-anchor="middle">Depth</text>
+                <text class="s-sub" x="611" y="207" text-anchor="middle">frozen foundation model</text>
+              </svg>
+            </div>
+            <figcaption>Illustration of the idea. On a well-lit daytime frame, the gate skips the event branch.</figcaption>
+          </figure>
           <h4>Depth from RGB and event cameras, with a gate that decides</h4>
           <p>Pairs a frozen depth foundation model with an event transformer. A lightweight gate chooses RGB-only, event-only or fused inference for each input, so the event branch runs when it helps most: low light, motion blur and sparse frames. Evaluated on MVSEC and DSEC.</p>
           <p class="result">Accuracy within 1% of always-on fusion, with about 8% lower latency by day, 12% at night, and 22% less GPU energy in RGB-only mode.</p>
@@ -293,11 +451,18 @@
         </div>
 
         <div class="project">
+          <figure class="fig">
+            <div class="pane"><img src="figures/depth-fusion-cvprw24.webp" width="1522" height="463" loading="lazy" alt="Architecture: RGB frames and events, the events passed through ConvLSTM blocks, are patch-embedded into one shared transformer encoder, then token folding, convolutions and a residual dense block produce a depth map."></div>
+            <figcaption>Architecture, from the paper.</figcaption>
+          </figure>
           <h4>One transformer for events and RGB</h4>
-          <p>A unified transformer-based architecture with a shared encoder that fuses event and RGB data for monocular depth estimation.</p>
+          <p>A unified transformer that fuses event and RGB data for monocular depth estimation. Events pass through ConvLSTM blocks to keep their timing, then both modalities share one transformer encoder instead of running two.</p>
           <p class="result">Nearly half the runtime memory of prior fusion work (340 MB vs. 652 MB).</p>
           <p class="meta">CVPR Workshops 2024, first author</p>
+          <p class="plinks"><a href="https://openaccess.thecvf.com/content/CVPR2024W/MULA/html/Devulapally_Multi-Modal_Fusion_of_Event_and_RGB_for_Monocular_Depth_Estimation_CVPRW_2024_paper.html">Paper</a><a href="https://github.com/anusha-devulapally/ER-F2D">Code</a></p>
         </div>
+
+        <p class="also">Related: a first-author review of event-based vision sensor fusion (Neuromorphic Computing and Engineering, 2026), transformer-based GANs for robust multimodal depth (ACM Multimedia 2022), and spiking and hybrid networks for energy-efficient depth on edge devices (ISVLSI 2024, ICONS 2025).</p>
       </article>
 
       <article class="area">
@@ -305,22 +470,38 @@
         <p class="area-why">Models and datasets now outgrow a single GPU, and new memory tiers such as CXL are added for capacity without a principled way to predict when they pay off.</p>
 
         <div class="project">
+          <figure class="fig narrow">
+            <div class="pane"><img src="figures/pebble-memsys25.webp" width="966" height="387" loading="lazy" alt="Two processors with fast memory share a memory pool above slow storage. Each arrow carries a cost: 2 to 3 for the shared pool, 10 to read and 12 to write storage, and 6 between processors."></div>
+            <figcaption>The memory tiers and move costs the model uses, from the paper.</figcaption>
+          </figure>
           <h4>Modeling data movement across memory tiers</h4>
-          <p>Adds a pooled-memory tier to the classic red-blue pebble game and weights each move by its real cost, so schedules for deep networks can be compared by how much data they move.</p>
+          <p>Extends the classic red-blue pebble game with a shared memory-pool tier between fast local memory and slow storage, and weights each move by its cost. Schedules for workloads such as FFT and ResNet can then be compared by how much data they move.</p>
           <p class="result">Up to 3x lower modeled I/O cost for deep networks.</p>
           <p class="meta">MEMSYS 2025, first author</p>
+          <p class="plinks"><a href="https://www.memsys.io/wp-content/uploads/ninja-forms/5/2025_MEMSYS_red_blue_pebble_game.pdf">Paper (PDF)</a></p>
         </div>
 
         <div class="project">
+          <figure class="fig narrow">
+            <div class="pane"><img src="figures/isoefficiency-memsys24.webp" width="988" height="608" loading="lazy" alt="Line chart: isoefficiency falls from about 1.0 at 1 thread to about 0.2 at 16 threads, for network bandwidths of 50, 30 and 10 Gbps."></div>
+            <figcaption>Isoefficiency as threads grow, for three network bandwidths, from the paper.</figcaption>
+          </figure>
           <h4>When does disaggregated memory pay off?</h4>
-          <p>Uses isoefficiency, a classic HPC scalability metric, to judge how far a workload can scale on disaggregated memory before efficiency drops.</p>
+          <p>Proposes isoefficiency, a classic HPC scalability metric, as a way to judge how well a workload scales on CXL-based disaggregated memory. Evaluated with sparse matrix multiplication on a two-socket server and a simulated CXL memory system.</p>
           <p class="meta">MEMSYS 2024, first author</p>
+          <p class="plinks"><a href="https://pure.psu.edu/en/publications/using-isoefficiency-as-a-metric-to-assess-disaggregated-memory-sy/">Paper</a></p>
         </div>
 
         <div class="project">
-          <h4>Processing in and near memory</h4>
-          <p>Co-authored work on computing inside the CXL fabric switch for large-scale recommendation inference, tiered processing near memory, and auto-tuning ML pipelines on NUMA and CXL memory.</p>
+          <figure class="fig">
+            <div class="pane"><img src="figures/pifs-rec-micro24.webp" width="1600" height="396" loading="lazy" alt="Block diagram of the process core added inside a CXL fabric switch, with instruction ingress, accumulate logic, an on-switch buffer and migration control."></div>
+            <figcaption>PIFS-Rec adds a process core inside the CXL fabric switch, from the paper.</figcaption>
+          </figure>
+          <h4>Processing in and near CXL memory</h4>
+          <p>Co-authored work that moves computation closer to CXL memory: processing inside the CXL fabric switch for large-scale recommendation inference (PIFS-Rec), a general-purpose tiered process-near-memory framework (TPNM), and ML-pipeline optimization in cost-effective disaggregated datacenters.</p>
+          <p class="result">PIFS-Rec: 3.89x lower latency than Pond, an industry-standard CXL system, and 2.03x better than BEACON.</p>
           <p class="meta">MICRO 2024, ISPASS 2025, MICRO 2025</p>
+          <p class="plinks"><a href="https://arxiv.org/abs/2409.16633">PIFS-Rec paper</a></p>
         </div>
       </article>
 
@@ -329,10 +510,41 @@
         <p class="area-why">As processors split into chiplets on one package, designers need temperature estimates far faster than full thermal simulation allows.</p>
 
         <div class="project">
+          <figure class="fig illus">
+            <div class="pane">
+              <svg viewBox="0 0 700 240" role="img" aria-labelledby="therm-t">
+                <title id="therm-t">A power map of chiplets on an interposer goes into a transformer surrogate, which outputs a temperature map.</title>
+                <defs>
+                  <radialGradient id="heat" cx="0.5" cy="0.5" r="0.62">
+                    <stop offset="0" stop-color="#C9832A"/><stop offset="0.35" stop-color="#E9C46A"/><stop offset="0.7" stop-color="#7FC4C0"/><stop offset="1" stop-color="#2F6F8F"/>
+                  </radialGradient>
+                  <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" style="fill: var(--teal)"/></marker>
+                </defs>
+                <rect class="s-box" x="20" y="30" width="190" height="150" rx="6"/>
+                <rect x="72" y="70" width="86" height="70" rx="3" fill="#C9832A"/>
+                <rect x="34" y="46" width="28" height="42" rx="3" fill="#0D7D82" opacity="0.55"/>
+                <rect x="34" y="122" width="28" height="42" rx="3" fill="#0D7D82" opacity="0.55"/>
+                <rect x="168" y="46" width="28" height="42" rx="3" fill="#0D7D82" opacity="0.55"/>
+                <rect x="168" y="122" width="28" height="42" rx="3" fill="#0D7D82" opacity="0.55"/>
+                <text class="s-sub" x="115" y="110" text-anchor="middle" style="fill:#fff">GPU</text>
+                <text class="s-label" x="115" y="205" text-anchor="middle">Power map</text>
+                <text class="s-sub" x="115" y="222" text-anchor="middle">chiplets on an interposer</text>
+                <g style="color: var(--teal)"><path class="s-live" d="M218 105 L 262 105" marker-end="url(#arr)"/></g>
+                <rect class="s-live-box" x="268" y="72" width="164" height="66" rx="8"/>
+                <text class="s-label" x="350" y="101" text-anchor="middle">Transformer</text>
+                <text class="s-sub" x="350" y="119" text-anchor="middle">surrogate</text>
+                <g style="color: var(--teal)"><path class="s-live" d="M438 105 L 482 105" marker-end="url(#arr)"/></g>
+                <rect x="490" y="30" width="190" height="150" rx="6" fill="url(#heat)"/>
+                <text class="s-label" x="585" y="205" text-anchor="middle">Temperature map</text>
+                <text class="s-sub" x="585" y="222" text-anchor="middle">in place of slow simulation</text>
+              </svg>
+            </div>
+            <figcaption>Illustration of the idea.</figcaption>
+          </figure>
           <h4>Transformer thermal surrogates for 2.5D chiplets</h4>
-          <p>Transformer models that predict chiplet temperatures in place of slow simulation. PhysThermix adds thermal-conductivity and heat-transfer maps, plus physics losses from the heat equation and boundary conditions.</p>
+          <p>ThermLeT predicts the temperatures of 2.5D chiplet systems with a transformer instead of slow thermal simulation. PhysThermix builds on it with thermal-conductivity and heat-transfer maps, plus physics losses from the heat equation and boundary conditions.</p>
           <p class="result">5.9x faster than prior methods.</p>
-          <p class="meta">NeurIPS 2026 Workshop on AI for Chip Design</p>
+          <p class="meta">VLSI Design 2026 (ThermLeT, co-first author), NeurIPS 2026 Workshop on AI for Chip Design (PhysThermix)</p>
         </div>
       </article>
 
@@ -344,29 +556,47 @@
     <div class="block-body">
       <ol class="timeline">
         <li>
-          <span class="when">2026</span>
+          <span class="when">Aug to Nov 2026</span>
           <div>
             <h3>SK hynix America</h3>
-            <p class="role-title">AI-HPC Systems Intern</p>
-            <p>GPU, CXL and NVMe memory hierarchy for large-scale GNN training: hot-feature placement, asynchronous prefetching and cache management.</p>
+            <p class="role-title">AI/HPC System Research Intern</p>
+            <p>Built a GPU, CXL and NVMe memory hierarchy for large-scale GNN training, letting GPUs read features directly from CXL memory with SSD as the backing store for datasets larger than GPU memory. Designed hot-feature placement, asynchronous prefetching and cache management to cut SSD accesses and feature-fetch latency.</p>
           </div>
         </li>
-        <!-- PNNL internship: fill in the year, role and one line, then remove these comment markers.
         <li>
-          <span class="when">YEAR</span>
+          <span class="when">May 2024 to Nov 2025</span>
           <div>
             <h3>Pacific Northwest National Laboratory</h3>
-            <p class="role-title">ROLE TITLE</p>
-            <p>One line on what you worked on.</p>
+            <p class="role-title">PhD Research Intern, Richland, WA</p>
+            <p>Built cross-modal validation and refinement pipelines for understanding and segmenting maps in NEPA environmental documents, and fine-tuned OpenCLIP for captioning and image-to-text retrieval on scientific documents about wind energy. Designed analytical and learning-based schedulers, both greedy and reinforcement learning, for AI workloads on disaggregated memory.</p>
           </div>
         </li>
-        -->
         <li>
-          <span class="when">2027</span>
+          <span class="when">2021 to now</span>
+          <div>
+            <h3>Microsystems Design Lab, Penn State</h3>
+            <p class="role-title">Graduate Research Assistant</p>
+            <p>Adaptive multimodal models that stay robust when inputs are missing or noisy, transformer models for event and RGB depth estimation, and profiling of large AI workloads on CXL-based disaggregated memory.</p>
+          </div>
+        </li>
+      </ol>
+
+      <h3 class="sub-h">Education</h3>
+      <ol class="timeline">
+        <li>
+          <span class="when">2021 to 2027</span>
           <div>
             <h3>The Pennsylvania State University</h3>
-            <p class="role-title">PhD, Computer Science and Engineering</p>
-            <p>Advised by Prof. Vijaykrishnan Narayanan. Expected January 2027.</p>
+            <p class="role-title">PhD, Computer Science and Engineering. Expected January 2027.</p>
+            <p>Dissertation: Multi-Modal AI Models and Memory-Centric Analysis for Emerging Architectures. Advised by Prof. Vijaykrishnan Narayanan.</p>
+          </div>
+        </li>
+        <li>
+          <span class="when">2019 to 2021</span>
+          <div>
+            <h3>Indian Institute of Technology Goa</h3>
+            <p class="role-title">M.Tech, Computer Science and Engineering</p>
+            <p>Thesis: Cell Segmentation from 3D Confocal Images using U-Net Variants. Advised by Dr. Clint P. George and Dr. Sreenath Balakrishnan.</p>
           </div>
         </li>
       </ol>
@@ -374,62 +604,128 @@
   </section>
 
   <section id="publications" class="block" aria-labelledby="publications-h">
-    <h2 id="publications-h">Selected publications</h2>
+    <h2 id="publications-h">Publications</h2>
     <div class="block-body">
-      <ol class="pubs">
-        <li>
-          <span class="when">2026</span>
-          <div>
-            <p class="pub-title">PhysThermix<!-- add the rest of the paper title here --></p>
-            <p class="pub-authors">Miyuki Tokuhara, <strong>Anusha Devulapally</strong>, Varun Darshana Parekh, Vijaykrishnan Narayanan</p>
+
+      <div class="pub-year">
+        <h3>2026</h3>
+        <ol class="pubs">
+          <li>
+            <p class="pub-title">PhysThermix: A Physics-Informed Surrogate for Thermal Prediction of 2.5D Chiplet Architectures</p>
+            <p class="pub-authors">M. Tokuhara, <strong>A. Devulapally</strong>, V. D. Parekh, V. Narayanan</p>
             <p class="pub-venue">NeurIPS 2026 Workshop on AI for Chip Design</p>
-          </div>
-        </li>
-        <li>
-          <span class="when">2025</span>
-          <div>
+          </li>
+          <li>
+            <p class="pub-title">A Review of Event-Based Vision Sensor Fusion: Architectures, Evaluation and Robustness Challenges</p>
+            <p class="pub-authors"><strong>A. Devulapally</strong>, S. A. Tumpa, V. Narayanan</p>
+            <p class="pub-venue">Neuromorphic Computing and Engineering</p>
+          </li>
+          <li>
+            <p class="pub-title">ThermLeT: Transformer Based Temperature Prediction for 2.5D Chiplet Architecture</p>
+            <p class="pub-authors"><strong>A. Devulapally</strong>*, V. D. Parekh*, S. Devarapalli, C. Henderson, V. Narayanan <span class="eq">(*equal contribution)</span></p>
+            <p class="pub-venue">International Conference on VLSI Design (VLSID)</p>
+          </li>
+        </ol>
+      </div>
+
+      <div class="pub-year">
+        <h3>2025</h3>
+        <ol class="pubs">
+          <li>
+            <p class="pub-title">Multi-Dimensional ML-Pipeline Optimization in Cost-Effective Disaggregated Datacenter</p>
+            <p class="pub-authors">P. Huo, <strong>A. Devulapally</strong>, H. Al Maruf, N. Chandramoorthy, M. Arunachalam, G. G. Akbulut, M. T. Kandemir, V. Narayanan</p>
+            <p class="pub-venue">IEEE/ACM International Symposium on Microarchitecture (MICRO)</p>
+          </li>
+          <li>
             <p class="pub-title"><a href="https://www.memsys.io/wp-content/uploads/ninja-forms/5/2025_MEMSYS_red_blue_pebble_game.pdf">Revisiting Pebble Games for Modeling and Efficient Use of Disaggregated Memory Systems</a></p>
-            <p class="pub-authors"><strong>Anusha Devulapally</strong>, Mahantesh Halappanavar, Bruno Jacob, Vijaykrishnan Narayanan, Andres Marquez</p>
-            <p class="pub-venue">International Symposium on Memory Systems (MEMSYS) 2025</p>
-          </div>
-        </li>
-        <li>
-          <span class="when">2024</span>
-          <div>
-            <p class="pub-title"><a href="https://openaccess.thecvf.com/content/CVPR2024W/MULA/html/Devulapally_Multi-Modal_Fusion_of_Event_and_RGB_for_Monocular_Depth_Estimation_CVPRW_2024_paper.html">Multi-Modal Fusion of Event and RGB for Monocular Depth Estimation Using a Unified Transformer-Based Architecture</a></p>
-            <p class="pub-authors"><strong>Anusha Devulapally</strong>, Md Fahim Faysal Khan, Siddharth Advani, Vijaykrishnan Narayanan</p>
-            <p class="pub-venue">CVPR Workshops 2024</p>
-          </div>
-        </li>
-        <li>
-          <span class="when">2024</span>
-          <div>
-            <p class="pub-title"><a href="https://pure.psu.edu/en/publications/using-isoefficiency-as-a-metric-to-assess-disaggregated-memory-sy/">Using Isoefficiency as a Metric to Assess Disaggregated Memory Systems for High Performance Computing</a></p>
-            <p class="pub-authors"><strong>Anusha Devulapally</strong>, Mahantesh Halappanavar, Amit Puri, Vijaykrishnan Narayanan, Andres Marquez</p>
-            <p class="pub-venue">International Symposium on Memory Systems (MEMSYS) 2024</p>
-          </div>
-        </li>
-        <li>
-          <span class="when">2024</span>
-          <div>
+            <p class="pub-authors"><strong>A. Devulapally</strong>, M. Halappanavar, B. Jacob, V. Narayanan, A. Marquez</p>
+            <p class="pub-venue">International Symposium on Memory Systems (MEMSYS)</p>
+          </li>
+          <li>
+            <p class="pub-title">TPNM: A CXL Based General Purpose Tiered Process Near Memory Framework</p>
+            <p class="pub-authors">P. Huo, <strong>A. Devulapally</strong>, H. Al Maruf, M. Arunachalam, M. T. Kandemir, V. Narayanan</p>
+            <p class="pub-venue">IEEE International Symposium on Performance Analysis of Systems and Software (ISPASS)</p>
+          </li>
+          <li>
+            <p class="pub-title">DESTformer: Energy-Efficient Monocular Depth Estimation with Spiking Transformer for Edge Devices</p>
+            <p class="pub-authors">S. A. Tumpa, <strong>A. Devulapally</strong>, C. Lee, C. R. Das, V. Narayanan</p>
+            <p class="pub-venue">International Conference on Neuromorphic Systems (ICONS)</p>
+          </li>
+          <li>
+            <p class="pub-title">Cross-Modal Validation and Refinement for Scalable Digitization of NEPA Map Features</p>
+            <p class="pub-authors"><strong>A. Devulapally</strong>, H. Wan, C. Davis, B. Chauhan, M. Taylor, A. Acharya, A. Bernat, S. Munikoti, S. Horawalavithana</p>
+            <p class="pub-venue">AGU Fall Meeting (AGU25)</p>
+          </li>
+          <li>
+            <p class="pub-title">Building the Foundation for Georeferencing: A Preprocessing Workflow for NEPA Map Images</p>
+            <p class="pub-authors">H. Wan, <strong>A. Devulapally</strong>, C. Davis, S. Wagle, B. Chauhan, M. Taylor, A. Acharya, A. Bernat, S. Munikoti, S. Horawalavithana</p>
+            <p class="pub-venue">AGU Fall Meeting (AGU25)</p>
+          </li>
+        </ol>
+      </div>
+
+      <div class="pub-year">
+        <h3>2024</h3>
+        <ol class="pubs">
+          <li>
             <p class="pub-title"><a href="https://arxiv.org/abs/2409.16633">PIFS-Rec: Process-In-Fabric-Switch for Large-Scale Recommendation System Inferences</a></p>
-            <p class="pub-authors">Pingyi Huo, Krishnakumar Nair, Mahmut Taylan Kandemir, <strong>Anusha Devulapally</strong>, Meena Arunachalam, Hasan Al Maruf, Minseo Park, Gulsum Gudukbay Akbulut, Vijaykrishnan Narayanan</p>
-            <p class="pub-venue">IEEE/ACM International Symposium on Microarchitecture (MICRO) 2024</p>
-          </div>
-        </li>
-        <!--
-          To add a paper, copy this block above and fill it in:
-        <li>
-          <span class="when">YEAR</span>
-          <div>
-            <p class="pub-title"><a href="LINK">Title</a></p>
-            <p class="pub-authors">Author, <strong>Anusha Devulapally</strong>, Author</p>
-            <p class="pub-venue">Venue YEAR</p>
-          </div>
-        </li>
-        -->
-      </ol>
-      <p class="more">The full list of 15 papers is in my <a href="cv.pdf">CV</a>.</p>
+            <p class="pub-authors">P. Huo, <strong>A. Devulapally</strong>, H. Al Maruf, M. Park, K. Nair, M. Arunachalam, G. G. Akbulut, M. T. Kandemir, V. Narayanan</p>
+            <p class="pub-venue">IEEE/ACM International Symposium on Microarchitecture (MICRO)</p>
+          </li>
+          <li>
+            <p class="pub-title"><a href="https://openaccess.thecvf.com/content/CVPR2024W/MULA/html/Devulapally_Multi-Modal_Fusion_of_Event_and_RGB_for_Monocular_Depth_Estimation_CVPRW_2024_paper.html">Multi-Modal Fusion of Event and RGB for Monocular Depth Estimation Using a Unified Transformer-based Architecture</a></p>
+            <p class="pub-authors"><strong>A. Devulapally</strong>, M. F. F. Khan, S. Advani, V. Narayanan</p>
+            <p class="pub-venue">CVPR Workshops <a href="https://github.com/anusha-devulapally/ER-F2D">Code</a></p>
+          </li>
+          <li>
+            <p class="pub-title"><a href="https://pure.psu.edu/en/publications/using-isoefficiency-as-a-metric-to-assess-disaggregated-memory-sy/">Using Isoefficiency as a Metric to Assess Disaggregated Memory Systems for High Performance Computing</a></p>
+            <p class="pub-authors"><strong>A. Devulapally</strong>, M. Halappanavar, A. Puri, V. Narayanan, A. Marquez</p>
+            <p class="pub-venue">International Symposium on Memory Systems (MEMSYS)</p>
+          </li>
+          <li>
+            <p class="pub-title">SNN-ANN Hybrid Networks for Embedded Multimodal Monocular Depth Estimation</p>
+            <p class="pub-authors">S. A. Tumpa, <strong>A. Devulapally</strong>, M. Brehove, E. Kyubwa, V. Narayanan</p>
+            <p class="pub-venue">IEEE Computer Society Annual Symposium on VLSI (ISVLSI)</p>
+          </li>
+          <li>
+            <p class="pub-title">On the variability in cell and nucleus shapes</p>
+            <p class="pub-authors"><strong>A. Devulapally</strong>, V. D. Parekh, C. P. George, S. Balakrishnan</p>
+            <p class="pub-venue">Cells Tissues Organs</p>
+          </li>
+        </ol>
+      </div>
+
+      <div class="pub-year">
+        <h3>2022</h3>
+        <ol class="pubs">
+          <li>
+            <p class="pub-title">Robust Multimodal Depth Estimation using Transformer based Generative Adversarial Networks</p>
+            <p class="pub-authors">M. F. F. Khan, <strong>A. Devulapally</strong>, S. Advani, V. Narayanan</p>
+            <p class="pub-venue">ACM International Conference on Multimedia (ACM MM)</p>
+          </li>
+        </ol>
+      </div>
+
+
+      <div class="pub-year">
+        <h3>In submission</h3>
+        <ol class="pubs">
+          <li>
+            <p class="pub-title">Conditional RGB-Event Fusion for Monocular Depth Estimation with Foundation Models</p>
+            <p class="pub-authors"><strong>A. Devulapally</strong>, V. Narayanan</p>
+          </li>
+          <li>
+            <p class="pub-title">Physics-Informed Transformer Surrogate for Thermal Prediction across 2.5D Chiplet Architectures</p>
+            <p class="pub-authors">V. D. Parekh, M. Tokuhara, <strong>A. Devulapally</strong>, S. R. Srinivasa, M. Sciulli, V. Narayanan</p>
+          </li>
+          <li>
+            <p class="pub-title">Accelerating Speculative Decoding on 2.5D Heterogeneous Integration Systems</p>
+            <p class="pub-authors">V. D. Parekh, <strong>A. Devulapally</strong>, V. Narayanan</p>
+          </li>
+        </ol>
+      </div>
+
+      <p class="more">Citations and the latest list are on <a href="https://scholar.google.com/citations?user=SGNp7WsAAAAJ&amp;hl=en">Google Scholar</a>.</p>
     </div>
   </section>
 
@@ -439,16 +735,29 @@
       <dl class="skills">
         <div>
           <dt>ML and AI</dt>
-          <dd>Multimodal fusion, transformers and depth foundation models, event-based vision, physics-informed learning</dd>
+          <dd>PyTorch, transformers, vision-language models, OpenCLIP, multimodal learning, spiking neural networks, physics-informed learning</dd>
         </div>
         <div>
           <dt>Systems and HPC</dt>
-          <dd>CXL and disaggregated memory, GPU memory hierarchies, data placement and prefetching, NUMA systems</dd>
+          <dd>CXL and disaggregated memory, computer architecture, CUDA, OpenMP, multi-node training, performance modeling</dd>
         </div>
         <div>
-          <dt>Performance engineering</dt>
-          <dd>GPU profiling, performance modeling, isoefficiency and I/O cost analysis</dd>
+          <dt>Optimization and tools</dt>
+          <dd>Profiling, quantization, compression, latency and accuracy trade-offs, RL-based optimization. Python, C/C++, MATLAB, Linux, Git</dd>
         </div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="service" class="block" aria-labelledby="service-h">
+    <h2 id="service-h">Talks and service</h2>
+    <div class="block-body">
+      <dl class="facts">
+        <div><dt>Talks</dt><dd>Oral presentations at the MULA Workshop at CVPR 2024 and at MEMSYS 2024 and 2025. Invited talks at SRC TECHCON 2023, the PRISM Liaison Meeting 2025 and the CBRIC Industry Meeting 2022.</dd></div>
+        <div><dt>Mentoring</dt><dd>Two undergraduate summer researchers on ThermLeT and PhysThermix, each leading to a publication. A capstone on mapping AI workloads to edge devices, a master's student on AI-driven chip placement, and a high-school teacher through Penn State's RET program.</dd></div>
+        <div><dt>Reviewing</dt><dd>NeurIPS, ICRA, IEEE TVLSI, IEEE TPDS, IEEE TMM, ACM TOMM, IEEE TAI, CVIU and Neurocomputing.</dd></div>
+        <div><dt>Recognition</dt><dd>Honorable Award, AI Week Poster Session, Penn State AI Hub, 2024.</dd></div>
+        <div><dt>Community</dt><dd>Volunteer at ASPLOS 2026 and Girls Who Code. Judge at the Penn State Undergraduate Exhibition 2025.</dd></div>
       </dl>
     </div>
   </section>
@@ -459,6 +768,7 @@
       <p>I'm open to full-time roles starting in 2027. Email is the fastest way to reach me.</p>
       <a class="contact-email" href="mailto:akd5994@psu.edu">akd5994@psu.edu</a>
       <ul class="links">
+        <li><a href="https://scholar.google.com/citations?user=SGNp7WsAAAAJ&amp;hl=en">Google Scholar</a></li>
         <li><a href="https://www.linkedin.com/in/anusha-devulapally">LinkedIn</a></li>
         <li><a href="https://github.com/anusha-devulapally">GitHub</a></li>
         <li><a href="cv.pdf">CV (PDF)</a></li>
